@@ -37,19 +37,25 @@ const Navbar: React.FC<NavbarProps> = ({
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-blue-900 shadow-lg z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-red-900 shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+
           {/* Logo and Brand */}
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-3">
-              {/* Government Logo Placeholder */}
-              <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
-                <span className="text-blue-900 font-bold text-sm">GOV</span>
-              </div>
+              {/* Government Emblem Image */}
+              <img
+                src="/emblem.svg.png"
+                alt="Government of India"
+                className="w-10 h-10 bg-white p-1 rounded"
+              />
+
               <div>
                 <h1 className="text-white font-bold text-xl">Let's Intern</h1>
-                <p className="text-blue-200 text-xs hidden sm:block">{getText('tagline')}</p>
+                <p className="text-red-200 text-xs hidden sm:block">
+                  {getText('tagline')}
+                </p>
               </div>
             </div>
           </div>
@@ -65,8 +71,8 @@ const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => onPageChange(item.key)}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     currentPage === item.key
-                      ? 'bg-blue-700 text-white'
-                      : 'text-blue-200 hover:text-white hover:bg-blue-800'
+                      ? 'bg-red-700 text-white'
+                      : 'text-red-200 hover:text-white hover:bg-red-800'
                   }`}
                 >
                   {Icon && <Icon className="h-4 w-4" />}
@@ -76,23 +82,25 @@ const Navbar: React.FC<NavbarProps> = ({
             })}
           </div>
 
-          {/* Right Side Actions */}
+          {/* Right Actions */}
           <div className="flex items-center space-x-4">
+
             {/* Language Toggle */}
             <button
               onClick={onLanguageToggle}
-              className="flex items-center space-x-1 text-blue-200 hover:text-white p-2 rounded-md hover:bg-blue-800 transition-colors"
+              className="flex items-center space-x-1 text-red-200 hover:text-white p-2 rounded-md hover:bg-red-800 transition-colors"
             >
               <Globe className="h-4 w-4" />
               <span className="text-sm font-medium">{language.toUpperCase()}</span>
             </button>
 
+            {/* Auth Section */}
             {currentUser ? (
               <div className="flex items-center space-x-3">
                 {/* Notifications */}
                 <button
                   onClick={onNotificationsClick}
-                  className="relative p-2 text-blue-200 hover:text-white hover:bg-blue-800 rounded-md transition-colors"
+                  className="relative p-2 text-red-200 hover:text-white hover:bg-red-800 rounded-md transition-colors"
                 >
                   <Bell className="h-5 w-5" />
                   {notificationCount > 0 && (
@@ -102,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   )}
                 </button>
 
-                {/* User Menu */}
+                {/* User Info */}
                 <div className="flex items-center space-x-2 text-white">
                   <User className="h-5 w-5" />
                   <span className="hidden sm:block text-sm">{currentUser.name}</span>
@@ -111,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 {/* Logout */}
                 <button
                   onClick={onLogout}
-                  className="p-2 text-blue-200 hover:text-white hover:bg-blue-800 rounded-md transition-colors"
+                  className="p-2 text-red-200 hover:text-white hover:bg-red-800 rounded-md transition-colors"
                 >
                   <LogOut className="h-4 w-4" />
                 </button>
@@ -119,16 +127,16 @@ const Navbar: React.FC<NavbarProps> = ({
             ) : (
               <button
                 onClick={onAuthClick}
-                className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-4 py-2 rounded-md font-medium transition-colors"
+                className="bg-yellow-400 hover:bg-yellow-500 text-red-900 px-4 py-2 rounded-md font-medium transition-colors"
               >
                 {getText('login')}
               </button>
             )}
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-blue-200 hover:text-white hover:bg-blue-800 rounded-md transition-colors"
+              className="md:hidden p-2 text-red-200 hover:text-white hover:bg-red-800 rounded-md transition-colors"
             >
               {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -137,7 +145,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-blue-800 rounded-lg mt-2 mb-4 p-4">
+          <div className="md:hidden bg-red-800 rounded-lg mt-2 mb-4 p-4">
             {navItems.map((item) => {
               if (item.requiresAuth && !currentUser) return null;
               const Icon = item.icon;
@@ -150,8 +158,8 @@ const Navbar: React.FC<NavbarProps> = ({
                   }}
                   className={`flex items-center space-x-2 w-full px-3 py-3 rounded-md text-left transition-colors ${
                     currentPage === item.key
-                      ? 'bg-blue-700 text-white'
-                      : 'text-blue-200 hover:text-white hover:bg-blue-700'
+                      ? 'bg-red-700 text-white'
+                      : 'text-red-200 hover:text-white hover:bg-red-700'
                   }`}
                 >
                   {Icon && <Icon className="h-4 w-4" />}
@@ -167,3 +175,4 @@ const Navbar: React.FC<NavbarProps> = ({
 };
 
 export default Navbar;
+

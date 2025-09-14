@@ -9,32 +9,37 @@ interface LandingPageProps {
 const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, getText }) => {
   return (
     <div className="min-h-screen">
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+      <section className="bg-gradient-to-br from-red-300 via-red-500 to-red-400 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center items-center space-x-2 mb-6">
-              <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
-                <span className="text-blue-900 font-bold text-xl">GOV</span>
+              <div className="w-16 h-16  rounded-full flex items-center justify-center">
+              <img
+                src="/emblem.svg.png"
+                alt="Government of India"
+                className="w-30 h-30 bg-white p-1 rounded"
+              />
               </div>
-              <Sparkles className="h-8 w-8 text-yellow-400" />
+              {/* <Sparkles className="h-8 w-8 text" /> */}
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Let's Intern
               <span className="block text-yellow-400 text-2xl md:text-3xl font-normal mt-2">
                 {getText('tagline')}
               </span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-blue-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+
+            <p className="text-xl md:text-2xl text-red-200 mb-8 max-w-3xl mx-auto leading-relaxed">
               AI-powered platform connecting students with government AICTE internships and premium private opportunities. 
               Find your perfect internship match today.
             </p>
-            
+
             <button
               onClick={onGetStarted}
-              className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-2 mx-auto"
+              className="bg-yellow-400 hover:bg-yellow-500 text-red-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-2 mx-auto"
             >
               <span>Get Started</span>
               <ArrowRight className="h-5 w-5" />
@@ -56,8 +61,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, getText }) => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+            <div className="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mb-6">
                 <Award className="h-6 w-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Government Verified</h3>
@@ -104,10 +109,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, getText }) => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Government Internships */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="bg-blue-900 text-white p-6">
+              <div className="bg-red-900 text-white p-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
-                    <span className="text-blue-900 font-bold text-sm">GOV</span>
+                    <span className="text-red-900 font-bold text-sm">GOV</span>
                   </div>
                   <h3 className="text-2xl font-bold">Government Internships</h3>
                 </div>
@@ -115,7 +120,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, getText }) => {
               <div className="p-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Award className="h-5 w-5 text-blue-600" />
+                    <Award className="h-5 w-5 text-red-700" />
                     <span className="text-gray-700">AICTE Certified Programs</span>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -127,7 +132,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, getText }) => {
                     <span className="text-gray-700">1-3 Months Duration</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-red-600" />
+                    <MapPin className="h-5 w-5 text-red-300" />
                     <span className="text-gray-700">Pan-India Locations</span>
                   </div>
                 </div>
