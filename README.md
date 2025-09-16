@@ -1,5 +1,5 @@
 
-````markdown
+
 # 🎯 Internship Recommendation System (AI-Powered)
 
 An AI-driven web application that recommends internship roles to students and aspiring product managers based on their skills, interests, and educational background.
