@@ -1,4 +1,4 @@
-Awesome — here's your professional, AI-generated `README.md` for the **Internship Recommendation System** project 🚀
+
 ````markdown
 # 🎯 Internship Recommendation System (AI-Powered)
 
