@@ -11,7 +11,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, getText }) => {
     <div className="min-h-screen">
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-300 via-red-500 to-red-400 text-white py-20">
+      <section className="bg-gradient-to-br from-rose-300 via-rose-500 to-rose-400 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center items-center space-x-2 mb-6">
