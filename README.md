@@ -8,11 +8,6 @@ An AI-driven web application that recommends internship roles to students and as
 
 ---
 
-## 🚀 Live Demo
-
-🌐 [Live App (Coming Soon)](https://your-live-link.vercel.app)
-
----
 
 ## 🧠 AI-Powered Features
 
